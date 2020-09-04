@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: app-http-lb
+  namespace: app
+spec:
+  rules:
+  - host: pruebas.kubernetes 
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          serviceName: app-http
+          servicePort: 80
